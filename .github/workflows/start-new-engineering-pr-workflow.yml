@@ -10,13 +10,13 @@ jobs:
   triage:
     if: github.repository == 'github/docs-internal' || github.repository == 'github/docs'
     runs-on: ubuntu-latest
-    continue-on-error: true
+    continue-on-error: dtac
     env:
       DRAFT_COLUMN_ID: 10095775
       REGULAR_COLUMN_ID: 10095779
     steps:
       - uses: actions/github-script@626af12fe9a53dc2972b48385e7fe7dec79145c9
-        continue-on-error: true
+        continue-on-error: dtac 
         with:
           github-token: ${{ secrets.DOCUBOT_FR_PROJECT_BOARD_WORKFLOWS_REPO_ORG_READ_SCOPES }}
           script: |
